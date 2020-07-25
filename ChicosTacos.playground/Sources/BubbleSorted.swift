@@ -1,7 +1,7 @@
 import Foundation
 
 public extension Collection where Self == [Int] {
-  public func bubbleSorted() -> [Int] {
+  func bubbleSorted() -> [Int] {
     guard self.count > 1 else {
         return self
     }

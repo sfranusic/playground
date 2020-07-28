@@ -57,9 +57,12 @@ public func romanNumeral(_ number: Int) -> String? {
         // Special case.
         return "IV"
 
-    case 0...3:
+    case 1...3:
         let remainder = number % 1
         return "\(String(Array(repeating: "I", count: number / 1)))\(romanNumeral(remainder) ?? "")"
+
+    case 0:
+        return ""
 
     default:
         return nil

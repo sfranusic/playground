@@ -1,4 +1,5 @@
 import Foundation
+import XCTest
 
 public func romanNumeral(_ number: Int) -> String? {
 
@@ -66,5 +67,25 @@ public func romanNumeral(_ number: Int) -> String? {
 
     default:
         return nil
+    }
+}
+
+// MARK: - Unit Tests
+public class RomanNumeralTests: XCTestCase {
+
+    public func testRomanNumeralCases() {
+
+        let cases: [Int: String] = [
+            999: "CMXCIX",
+            444: "CDXLIV",
+            9: "IX",
+            8: "VIII",
+            0: ""
+        ]
+
+        for (number, answerString) in cases {
+            let generatedString = romanNumeral(number) ?? ""
+            XCTAssert(generatedString == answerString, "Generated string was \(generatedString) but should be \(answerString)")
+        }
     }
 }

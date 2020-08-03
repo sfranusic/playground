@@ -9,7 +9,7 @@ import Foundation
 
  */
 
-func countOccurrence(inputString: String) -> [Int] {
+func occurrencesOfSingleInts(inputString: String) -> [Int] {
     // Use an array's indices as keys for the count.
     var countArray = Array(repeating: 0, count: 10)
 

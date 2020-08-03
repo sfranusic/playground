@@ -85,7 +85,8 @@ public class RomanNumeralTests: XCTestCase {
 
         for (number, answerString) in cases {
             let generatedString = romanNumeral(number) ?? ""
-            XCTAssert(generatedString == answerString, "Generated string was \(generatedString) but should be \(answerString)")
+            XCTAssert(generatedString == answerString,
+                      "Generated string was \(generatedString) but should be \(answerString)")
         }
     }
 }

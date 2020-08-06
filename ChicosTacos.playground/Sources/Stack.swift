@@ -13,4 +13,8 @@ public struct Stack<Element> {
     public mutating func pop() -> Element {
         return self.elements.removeLast()
     }
+
+    public func peek() -> Element? {
+        return elements.count > 0 ? elements[elements.count - 1] : nil
+    }
 }

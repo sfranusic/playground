@@ -6,11 +6,11 @@ public struct Stack<Element> {
     // Explicitly make initializer publically accessible. 
     public init() {}
 
-    mutating func push(_ element: Element) {
+    public mutating func push(_ element: Element) {
         self.elements.append(element)
     }
 
-    mutating func pop() -> Element {
+    public mutating func pop() -> Element {
         return self.elements.removeLast()
     }
 }

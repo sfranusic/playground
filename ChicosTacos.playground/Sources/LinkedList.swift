@@ -1,20 +1,20 @@
 import Foundation
 
-class LinkedListNode {
-    var parent: LinkedListNode?
-    var child: LinkedListNode?
+public class LinkedListNode {
+    public var parent: LinkedListNode?
+    public var child: LinkedListNode?
 
-    var value: String = ""
+    public var value: String = ""
 
-    init(_ value: String) {
+    public init(_ value: String) {
         self.value = value
     }
 
-    var isRoot: Bool {
+    public var isRoot: Bool {
         self.parent == nil
     }
 
-    func insert(_ node: LinkedListNode) {
+    public func insert(_ node: LinkedListNode) {
         if let childNode = self.child {
             childNode.insert(node)
         } else {
@@ -24,14 +24,14 @@ class LinkedListNode {
 
     }
 
-    func pathList(_ count: Int = 1) -> String {
+    public func pathList(_ count: Int = 1) -> String {
         return "(\(count): \(self.value)) -> \(String(describing: self.child?.pathList(count + 1) ?? "nil"))"
     }
 
 }
 
 extension LinkedListNode {
-    var ancestorList: [LinkedListNode] {
+    public var ancestorList: [LinkedListNode] {
         if let parent = self.parent {
             return [self] + parent.ancestorList
         } else {
@@ -39,7 +39,7 @@ extension LinkedListNode {
         }
     }
 
-    func commonAncestor(nodeA: LinkedListNode, nodeB: LinkedListNode) -> Bool {
+    public func commonAncestor(nodeA: LinkedListNode, nodeB: LinkedListNode) -> Bool {
 
         guard nodeA !== nodeB else {
             return true
